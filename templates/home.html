@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+	<center><img src="/static/images/what-is-machine-learning.jpg" alt="Deloitte Machine Learning Guild" width="700" height="200" align="middle"><center>
+</head>
+<body>
+
+	<header>
+		<div class="container">
+		<div id="brandname">
+			Machine Learning App with Flask
+		</div>
+		<h2>E-commerce price prediction model</h2>
+		
+	</div>
+	</header>
+
+	<div class="ml-container">
+
+		<form action="{{ url_for('predict')}}" method="POST">
+		<p>Enter Product Name here</p>
+		<!-- <input type="text" name="comment"/> -->
+		<textarea name="product_name" rows="1" cols="50"></textarea>
+		<br/>
+		
+		<form action="{{ url_for('predict')}}" method="POST">
+		<p>Enter item condition id here</p>
+		<!-- <input type="text" name="comment"/> -->
+		<select name="item_condition">
+            <option value="1">Grade 1</option>
+			<option value="2">Grade 2</option>
+			<option value="3">Grade 3</option>
+			<option value="4">Grade 4</option>
+			<option value="5">Grade 5</option>
+	    </select>
+		<br/>
+
+		<form action="{{ url_for('predict')}}" method="POST">
+		<p>Enter category name here</p>
+		<!-- <input type="text" name="comment"/> -->
+		<textarea name="category_name" rows="2" cols="50"></textarea>
+		<br/>
+		
+		<form action="{{ url_for('predict')}}" method="POST">
+		<p>Enter brand name here</p>
+		<!-- <input type="text" name="comment"/> -->
+		<textarea name="brand_name" rows="1" cols="50"></textarea>
+		<br/>
+		
+		<form action="{{ url_for('predict')}}" method="POST">
+		<p>Enter shipping here</p>
+		<!-- <input type="text" name="comment"/> -->
+		<select name="shipping">
+            <option value="1">Included</option>
+			<option value="0">Not Included</option>
+	    </select>
+		<br/>
+		
+		<form action="{{ url_for('predict')}}" method="POST">
+		<p>Enter item description here</p>
+		<!-- <input type="text" name="comment"/> -->
+		<textarea name="item_description" rows="4" cols="50"></textarea>
+		<br/>
+		
+		<input type="submit" class="btn-info" value="What should I mark?">
+		
+	</form>
+		
+	</div>
+
+	
+	
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+	<center><img src="/static/images/what-is-machine-learning.jpg" alt="Deloitte Machine Learning Guild" width="700" height="200" align="middle"><center>
+</head>
+<body>
+
+	<header>
+		<div class="container">
+		<div id="brandname">
+			Machine Learning App with Flask
+		</div>
+		<h2>E-commerce price prediction model</h2>
+		
+	</div>
+	</header>
+	<p style="color:blue;font-size:20;text-align: center;"><b>Recommended price for your product is</b></p>
+	<div class="results">
+
+
+		
+	{% if prediction > 0%}
+	<div>
+	<p style="color:blue;font-size:20;text-align: center;">
+	<b>
+	{{prediction}}$
+	</b></p>
+	</div>
+	{% elif prediction < 0%}
+	<h2 style="color:blue;">Something went wrong</h2>
+	{% endif %}
+
+	</div>
+
+</body>
+</html>
